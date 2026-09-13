@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Veeiss.wcclient_linux.wcruffle</id>
+  <name>Whirled Club Client</name>
+  <summary>Unofficial client for Whirled Club</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <developer id="io.github.veeiss">
+    <name>Veeiss</name>
+  </developer>
+  <description>
+    <p>Whirled Club is a Flash virtual world that now runs through Ruffle. This client shows the site in its own window with a small bar for navigation, so it behaves like a desktop app instead of a browser tab.</p>
+    <p>Not affiliated with Whirled Club.</p>
+  </description>
+  <launchable type="desktop-id">io.github.Veeiss.wcclient_linux.wcruffle.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/Veeiss/wcclient-linux/releases/download/v1.0.0/screenshot.png</image>
+      <caption>A room and the shop in the client</caption>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://github.com/Veeiss/wcclient-linux</url>
+  <url type="bugtracker">https://github.com/Veeiss/wcclient-linux/issues</url>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="1.0.0" date="2026-09-13"/>
+  </releases>
+</component>

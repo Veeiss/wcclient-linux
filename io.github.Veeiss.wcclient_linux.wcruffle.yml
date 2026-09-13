@@ -1,0 +1,44 @@
+app-id: io.github.Veeiss.wcclient_linux.wcruffle
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '25.08'
+command: wcruffle
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --device=dri
+modules:
+  - name: wcruffle
+    buildsystem: simple
+    build-commands:
+      - cp -a electron /app/wcruffle
+      - rm /app/wcruffle/resources/default_app.asar
+      - mv /app/wcruffle/electron /app/wcruffle/wcruffle
+      - cp -a app /app/wcruffle/resources/app
+      - install -Dm755 flatpak-launcher /app/bin/wcruffle
+      - install -Dm644 io.github.Veeiss.wcclient_linux.wcruffle.desktop /app/share/applications/io.github.Veeiss.wcclient_linux.wcruffle.desktop
+      - install -Dm644 icon.png /app/share/icons/hicolor/256x256/apps/io.github.Veeiss.wcclient_linux.wcruffle.png
+      - install -Dm644 io.github.Veeiss.wcclient_linux.wcruffle.metainfo.xml /app/share/metainfo/io.github.Veeiss.wcclient_linux.wcruffle.metainfo.xml
+    sources:
+      - type: archive
+        url: https://github.com/electron/electron/releases/download/v44.3.0/electron-v44.3.0-linux-x64.zip
+        sha256: 8b49b9efdd73c0f467edc3c1cd5678392c384ccf224f34ff54179f736e2f384b
+        dest: electron
+        strip-components: 0
+      - type: archive
+        url: https://github.com/Veeiss/wcclient-linux/releases/download/v1.0.0/wcruffle-1.0.0.tar.gz
+        sha256: dc4954b4af43f1375bc4352deb5a39b1e11c44a169f5a62e5126881807d90c8c
+        dest: app
+      - type: file
+        path: flatpak-launcher
+      - type: file
+        path: io.github.Veeiss.wcclient_linux.wcruffle.desktop
+      - type: file
+        path: icon.png
+      - type: file
+        path: io.github.Veeiss.wcclient_linux.wcruffle.metainfo.xml

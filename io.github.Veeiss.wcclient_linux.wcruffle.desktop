@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Whirled Club Client
+Comment=Whirled Club virtual world, ruffle runtime
+Exec=wcruffle
+Icon=io.github.Veeiss.wcclient_linux.wcruffle
+Categories=Game;
+Terminal=false
+StartupWMClass=wcruffle
